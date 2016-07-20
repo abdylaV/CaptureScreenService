@@ -126,7 +126,7 @@ int CreatePicturePNG(wchar_t *filename, SizeMonitor size_param)
 
 #include "../Tools/Log.h"
 
-// D:\111\ffmpeg - 20160622 - e0faad8 - win64 - static\bin\ffmpeg.exe -r 5 -i "D:\testfiles\2016_5_24\img_%06d.png" -vcodec libx264 "D:\testfiles\out.mp4"
+// D:\111\ffmpeg-20160622-e0faad8-win64-static\bin\ffmpeg.exe -r 5 -i "D:\testfiles\2016_5_24\img_%06d.png" -vcodec libx264 "D:\testfiles\out.mp4"
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	_In_opt_ HINSTANCE hPrevInstance,
@@ -156,8 +156,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	strPathDir += L"\\";
 	strPathDir += username;
 
-	//wchar_t strPathDir[] = "LD:\\testfiles\\";
-
 	if (CreateDirectory(strPathDir.c_str(), NULL))
 	{
 		logTo(L"WindowSaveScreen: username directory create");
@@ -185,24 +183,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		//logTo(L"WindowSaveScreen: directory was created");
 	}
 
-	/*
-	asctime_s(str1, 32, &timeinfo);
-	printf("local: %s", str1);
-
-	result = gmtime_s(&timeinfo, &rawtime);
-
-	asctime_s(str2, 32, &timeinfo);
-	printf("UTC:   %s", str2);
-	*/
-	//asctime_s(str, sizeof str, gmtime_s(&t, &buf));
-	//printf("UTC:   %s", str);
-	//asctime_s(str, sizeof str, localtime_s(&t, &buf)));
-	//printf("local: %s", str);
-
-	//cout << 1900 + tk->tm_year << 1 + tk->tm_mon << tk->tm_mday << endl;
-
-	//long long llTime = (timeinfo.tm_hour * 3600) + (timeinfo.tm_min * 60) + timeinfo.tm_sec;
-
 	int iCounter = GetCountImg(strPathDir);
 
 	wchar_t strTime[256];
@@ -212,23 +192,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	strPathFile = strPathDir;
 	strPathFile += L"\\";
 	strPathFile += strTime;
-
-	//strPathFile += std::to_wstring(llTime);
-	//strPathFile += std::to_wstring(timeinfo.tm_hour);
-	//strPathFile += L"_";
-	//strPathFile += std::to_wstring(timeinfo.tm_min);
-	//strPathFile += L"_";
-	//strPathFile += std::to_wstring(timeinfo.tm_sec);
-	//strPathFile += L".png";
-
-	//swprintf_s(filename, L"D:\\testfiles\\file.png");
-	//CreatePicturePNG(filename);
-
-	//60 sec - 1 min
-	//60 min - 1 hr
-	// 3600 sec - 1 hr
-	//3600 * 23 + 59 * 60 + 59 = 86400
-	// max - 86400
 
 	int x, y, Width, Height;
 	std::vector<SizeMonitor> list_monitors_size;

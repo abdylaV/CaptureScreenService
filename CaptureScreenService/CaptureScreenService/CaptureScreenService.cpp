@@ -335,6 +335,12 @@ DWORD WINAPI ServiceWorkerThread(LPVOID lpParam)
 
 	while (WaitForSingleObject(g_ServiceStopEvent, 0) != WAIT_OBJECT_0)
 	{
+		// 60 sec - 1 min
+		// 60 min - 1 hr
+		// 3600 sec - 1 hr
+		// 3600 * 23 + 59 * 60 + 59 = 86400
+		// max - 86400
+
 		Sleep(1000);
 
 		//logTo("ServiceWorkerThread\n");
