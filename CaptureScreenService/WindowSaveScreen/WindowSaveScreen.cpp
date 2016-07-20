@@ -127,6 +127,7 @@ int CreatePicturePNG(wchar_t *filename, SizeMonitor size_param)
 #include "../Tools/Log.h"
 
 // D:\111\ffmpeg-20160622-e0faad8-win64-static\bin\ffmpeg.exe -r 5 -i "D:\testfiles\2016_5_24\img_%06d.png" -vcodec libx264 "D:\testfiles\out.mp4"
+// D:\111\ffmpeg-20160622-e0faad8-win64-static\bin\ffmpeg.exe - i "D:\testfiles\input.mp4" - i "E:\fff\Music\input.mp3" - c copy - map 0:0 - map 1 : 0 "D:\testfiles\output.mp4"
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	_In_opt_ HINSTANCE hPrevInstance,
